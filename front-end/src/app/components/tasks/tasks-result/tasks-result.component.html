@@ -1,0 +1,29 @@
+<table mat-table [dataSource]="dataSource">
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox></mat-checkbox>
+        </th>
+
+        <th mat-cell *matCellDef="let element">
+            <mat-checkbox></mat-checkbox>
+        </th>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Task</th>
+        <th mat-cell *matCellDef="let element">{{ element.taskName }}</th>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+         <th mat-header-cell *matHeaderCellDef>status</th>
+        <th mat-cell *matCellDef="let element">{{ element.status }}</th>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+         <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <th mat-cell *matCellDef="let element">{{ element.actions }}</th>
+    </ng-container>
+</table>
