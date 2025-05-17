@@ -4,7 +4,10 @@
 
   <ng-container matColumnDef="select">
     <th mat-header-cell *matHeaderCellDef>
-      <mat-checkbox (change)="checkAllRows($event)"></mat-checkbox>
+      <mat-checkbox 
+      (change)="checkAllRows($event)"
+      [checked] = "isAllSelected()"
+      ></mat-checkbox>
     </th>
     <td mat-cell *matCellDef="let row">
       <mat-checkbox

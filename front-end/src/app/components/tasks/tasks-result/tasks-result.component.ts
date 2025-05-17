@@ -30,7 +30,6 @@ export class TasksResultComponent {
   selection: Task[] = [];
 
   checkAllRows(event: any) {
-    console.log(event);
     if (event.checked) {
       this.selection = [...this.dataSource];
     } else {
@@ -39,6 +38,15 @@ export class TasksResultComponent {
   }
 
   checkRow(row: Task) {
-    console.log(row);
+    const index = this.selection.indexOf(row);
+    if (index === -1) {
+      this.selection.push(row);
+    } else {
+      this.selection.splice(index, 1);
+    }
+  }
+
+  isAllSelected() {
+    return this.selection.length === this.dataSource.length;
   }
 }
