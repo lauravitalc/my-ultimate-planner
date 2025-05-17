@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 export interface Task {
   taskName: string;
   status: string;
-  actions: string;
 }
 @Component({
   selector: 'app-tasks-result',
@@ -17,13 +16,11 @@ export class TasksResultComponent {
   dataSource: Task[] = [
     {
       taskName: 'Task 1',
-      status: 'In Progress',
-      actions: 'Edit',
+      status: 'In Progress'
     },
     {
       taskName: 'Task 2',
       status: 'In Progress',
-      actions: 'Edit',
     },
   ];
 

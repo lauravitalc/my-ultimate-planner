@@ -5,12 +5,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatIconModule } from '@angular/material/icon';
 const materialModules = [
   MatCardModule,
   MatInputModule,
   MatButtonModule,
   MatTableModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatIconModule
 ];
 
 @NgModule({
