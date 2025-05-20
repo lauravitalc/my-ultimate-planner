@@ -8,6 +8,7 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { MaterialModule } from './shared/material/material.module';
 import { TasksInputComponent } from './components/tasks/tasks-input/tasks-input.component';
 import { TasksResultComponent } from './components/tasks/tasks-result/tasks-result.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TasksResultComponent } from './components/tasks/tasks-result/tasks-resu
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

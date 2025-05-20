@@ -1,7 +1,15 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width">
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
     <mat-label>Leave a comment</mat-label>
-    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    <textarea matInput formControlName="taskDescription"></textarea>
   </mat-form-field>
-  <button mat-flat-button>Basic</button>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Status</mat-label>
+    <mat-select formControlName="status">
+      <mat-option value="pending">Pending</mat-option>
+      <mat-option value="done">Done</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button type="submit" mat-flat-button>Send</button>
 </form>
