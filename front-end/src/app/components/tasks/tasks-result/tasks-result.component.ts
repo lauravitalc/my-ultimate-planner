@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-
-export interface Task {
-  taskName: string;
-  status: string;
-}
+import { Task } from '../../../models/task.model';
 @Component({
   selector: 'app-tasks-result',
   standalone: false,
@@ -15,11 +11,11 @@ export class TasksResultComponent {
 
   dataSource: Task[] = [
     {
-      taskName: 'Task 1',
+      taskDescription: 'Task 1',
       status: 'In Progress'
     },
     {
-      taskName: 'Task 2',
+      taskDescription: 'Task 2',
       status: 'In Progress',
     },
   ];
