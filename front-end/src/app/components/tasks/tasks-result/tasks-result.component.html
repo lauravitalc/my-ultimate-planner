@@ -1,7 +1,4 @@
-<table mat-table [dataSource]="dataSource">
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-
+<table mat-table [dataSource]="tasks" class="mat-elevation-z8">
   <ng-container matColumnDef="select">
     <th mat-header-cell *matHeaderCellDef>
       <mat-checkbox
@@ -11,14 +8,14 @@
     </th>
     <td mat-cell *matCellDef="let row">
       <mat-checkbox
-        (change)="checkRow(row)"
+        (change)="checkRow(row, $event.checked)"
         [checked]="selection.includes(row)"
       >
       </mat-checkbox>
     </td>
   </ng-container>
 
-  <ng-container matColumnDef="name">
+  <ng-container matColumnDef="taskDescription">
     <th mat-header-cell *matHeaderCellDef>Task</th>
     <th mat-cell *matCellDef="let element">{{ element.taskDescription }}</th>
   </ng-container>
@@ -39,4 +36,7 @@
       </button>
     </th>
   </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>

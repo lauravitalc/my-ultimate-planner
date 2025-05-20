@@ -1,12 +1,11 @@
 <mat-card appearance="outlined">
-  <mat-card-content>
-    Simple card 
-    <app-tasks-input></app-tasks-input>
+  <mat-card-content> 
+    <app-tasks-input (taskCreated)="addTask($event)"></app-tasks-input>
   </mat-card-content>
 </mat-card>
 
 <mat-card appearance="outlined">
   <mat-card-content>
-    <app-tasks-result></app-tasks-result>
+    <app-tasks-result [tasks]="tasks"></app-tasks-result>
   </mat-card-content>
 </mat-card>
