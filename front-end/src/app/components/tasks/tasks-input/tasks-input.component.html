@@ -11,5 +11,7 @@
       <mat-option value="done">Done</mat-option>
     </mat-select>
   </mat-form-field>
-  <button type="submit" mat-flat-button>Send</button>
+  <button type="submit" mat-flat-button>
+    {{ editTask ? "Update" : "Create" }}
+  </button>
 </form>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from '../../../models/task.model';
 import { TaskService } from '../../../services/task.service';
 @Component({
@@ -9,6 +9,7 @@ import { TaskService } from '../../../services/task.service';
 })
 export class TasksResultComponent {
   @Input() tasks: any[] = [];
+  @Output() edit = new EventEmitter<Task>();
 
   constructor(private taskService: TaskService) {}
 
@@ -43,5 +44,9 @@ export class TasksResultComponent {
 
   isAllSelected() {
     return this.selection.length === this.tasks.length;
+  }
+
+  editTask(task: Task) {
+    this.edit.emit(task);
   }
 }
