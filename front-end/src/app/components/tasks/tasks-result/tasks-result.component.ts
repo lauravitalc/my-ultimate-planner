@@ -10,6 +10,7 @@ import { TaskService } from '../../../services/task.service';
 export class TasksResultComponent {
   @Input() tasks: any[] = [];
   @Output() edit = new EventEmitter<Task>();
+  @Output() delete = new EventEmitter<Task>();
 
   constructor(private taskService: TaskService) {}
 
@@ -48,5 +49,9 @@ export class TasksResultComponent {
 
   editTask(task: Task) {
     this.edit.emit(task);
+  }
+
+  deleteTask(task: Task) {
+    this.delete.emit(task);
   }
 }

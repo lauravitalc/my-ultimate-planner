@@ -27,4 +27,12 @@ export class TasksComponent {
     this.editIndex = this.tasks.indexOf(task);
     this.editTask = { ...task };
   }
+
+  deleteTask(task: Task) {
+    const deleteIndex = this.tasks.indexOf(task);
+    if (deleteIndex !== -1) {
+      this.tasks.splice(deleteIndex, 1);
+      this.tasks = [...this.tasks];
+    }
+  }
 }
